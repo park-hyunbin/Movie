@@ -1,0 +1,24 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+function Movie({ id, coverImg, title, summary }) {
+  return (
+    <div>
+      <img src={coverImg} alt={title} />
+      <h2>
+        <Link to={`/movie/${id}`}>{title}</Link>
+      </h2>
+      <p>{summary}</p>
+    </div>
+  );
+}
+
+Movie.propTypes = {
+  id: PropTypes.number.isRequired,
+  coverImg: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+};
+
+export default Movie;
